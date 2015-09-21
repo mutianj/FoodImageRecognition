@@ -1,5 +1,7 @@
 Unzip the 'data.zip' and put all the matlab matrix into the current working folder.
 
+Need to add LIBSVM and VLFeat to the MATLAB search path.
+
 Open testImage.m, input the address of the image. 
 
 The output of the function is a vector "pred" with 14 elements. Each element represents one class. 1 means that the image has the corresponding food, -1 means the image doesn't have the corresponding food.
