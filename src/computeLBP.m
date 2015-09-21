@@ -1,0 +1,15 @@
+function lbp = computeLBP(im, patchsize)
+space = floor(patchsize/2);
+f1 = vl_lbp(im, patchsize);
+f1 = reshape(f1, size(f1,1)*size(f1,2),58);
+imgshift1 = im(space:size(im,1), :);
+f2 = vl_lbp(imgshift1, patchsize);
+f2 = reshape(f2, size(f2,1)*size(f2,2),58);
+imgshift2 = im(:, space:size(im,2));
+f3 = vl_lbp(imgshift2, patchsize);
+f3 = reshape(f3,size(f3,1)*size(f3,2),58);
+imgshift3 = im(space:size(im,1), space:size(im,2));
+f4 = vl_lbp(imgshift3,patchsize);
+f4 = reshape(f4,size(f4,1)*size(f4,2), 58);
+lbp = [f1;f2;f3;f4];
+lbp=lbp';
